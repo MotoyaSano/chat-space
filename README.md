@@ -23,6 +23,16 @@ Things you may want to cover:
 
 * ...
 
+## groupsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+### Association
+- has_many :users, through: :groups_users
+- has_many :messages
+- has_many :groups_users
+
 ## groups_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -39,25 +49,15 @@ Things you may want to cover:
 |password|string|null: false|
 |nickname|string|null: false|
 ### Association
-- has_many :message
-- has_many :comments
+- has_many :messages
+- has_many :groups, through: :groups_users
+- has_many :groups_users
 
-## messageテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|text||
 |text|text||
-|user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- has_many :comments
-
-## commentsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|text|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
-|tweet_id|integer|null: false, foreign_key: true|
-### Association
-- belongs_to :tweet
-- belongs_to :user
+- belongs_to :group
