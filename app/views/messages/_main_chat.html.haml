@@ -1,0 +1,38 @@
+.main-chat
+  .main-chat__group-info
+    .info-leftbox
+      .info-leftbox__group--name
+        test
+      %ul.info-leftbox__group--member
+        member :
+        %li.info-leftbox__group--member
+          taro
+    .info-rightbox
+      Edit
+  %ul.main-chat__message-list
+    %li.chat-lists
+      .chat-list
+        %p.chat-name
+          masa
+        %p.chat-time
+          2019/11/20(Wed) 17:43:01
+      %p.chat__message
+        おはよう
+    %li.chat-lists
+      .chat-list
+        %p.chat-name
+          sota
+        %p.chat-time
+          2019/11/20(Wed) 17:43:10
+      %p.chat__message
+        おはよ!
+  .main-chat__message-form
+    %form.input-box
+      .text
+        %input.text-message{placeholder: "type a message", type: "text"}
+        
+        %label.image
+          %i.fa.fa-image
+          %input{type: "file"}
+          
+      %input.submit-btn{type: "submit", value: "Send"}

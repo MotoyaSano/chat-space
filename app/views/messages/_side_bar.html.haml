@@ -1,0 +1,21 @@
+.side-bar
+  .side-bar__user-name
+    .side-bar__user-name--text
+      .side-bar__user-name--text--box 
+        名前
+      .side-bar__user-name--text--icon
+        = link_to '#', class:"newgroup__btn" do
+          %i.far.fa-edit
+          %span<>
+        = link_to '#', class:"editgroup__btn" do
+          %i.fas.fa-cog
+  %ul.group-list
+    %li.group
+      %p.group__group--name
+        techcamp
+      %p.group__group--message
+        まだメッセージがありません
+      %p.group__group--name
+        techcamp1
+      %p.group__group--message
+        まだメッセージがありません
