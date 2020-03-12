@@ -2,15 +2,19 @@
   .main-chat__group-info
     .info-leftbox
       .info-leftbox__group--name
-        test
+        = @group.name
       %ul.info-leftbox__group--member
         member :
-        %li.info-leftbox__group--member
-          taro
+        - @group.users.each do |user|
+          %li.info-leftbox__group--member
+            = user.name
+
     .info-rightbox
-      Edit
+      =link_to "Edit", "edit"
   %ul.main-chat__message-list
     %li.chat-lists
+      .messages
+        = render partial: 'message', collection: @messages
       .chat-list
         %p.chat-name
           masa
@@ -27,12 +31,22 @@
       %p.chat__message
         おはよ!
   .main-chat__message-form
-    %form.input-box
-      .text
-        %input.text-message{placeholder: "type a message", type: "text"}
+    = form_for [@group, @message] do |f|
+      .input-box
+        .text
+          = f.text_field :content, class: 'text-message', placeholder: 'type a message'
+          = f.label :image, class: 'image' do
+            = icon('fas', 'image', class: 'icon')
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'submit-btn'
+      
+
+    -# %form.input-box
+    -#   .text
+    -#     %input.text-message{placeholder: "type a message", type: "text"}
         
-        %label.image
-          %i.fa.fa-image
-          %input{type: "file"}
+    -#     %label.image
+    -#       %i.fa.fa-image
+    -#       %input{type: "file"}
           
-      %input.submit-btn{type: "submit", value: "Send"}
+    -#   %input.submit-btn{type: "submit", value: "Send"}
