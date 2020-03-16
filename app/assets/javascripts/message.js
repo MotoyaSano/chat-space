@@ -39,7 +39,6 @@ $(function(){
   }
 
   $('#new_message').on('submit', function(e){
-    console.log("check");
     e.preventDefault()
     var formData = new FormData(this);
     var url = $(this).attr('action');
