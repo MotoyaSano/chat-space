@@ -101,14 +101,20 @@
         line-height: 40px;
         font-size: 16px;
         color: #38aef0;  
-        border: 1px solid #38aef0;      
+        border: 1px solid #38aef0;   
       }
+
+        a {
+          text-decoration: none;
+          color: #38aef0;
+        }
     }
 
       &__message-list{
       background-color:  #fafafa;
       height: calc(100vh - 190px);
       padding: 35px 0 12px 40px;
+      overflow: scroll;
       .chat-lists{
         .chat-list{
         display: flex;
@@ -125,7 +131,7 @@
         }
         .chat__message{
           margin-top: 12px;
-          padding-bottom: 46px;
+          padding-bottom:46px;
           font-size: 14px;
           color: #434A54;
         }
