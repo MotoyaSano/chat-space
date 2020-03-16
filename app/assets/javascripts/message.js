@@ -1,7 +1,6 @@
 $(function(){
   function buildHTML(message){
     if ( message.image ) {
-      // console.log('image')
       var html =
       `<li class="chat-lists">
       <div class="chat-list">
@@ -21,7 +20,6 @@ $(function(){
       return html;
     
     } else {
-      // console.log('content only')
       var html =
        `<li class="chat-lists">
           <div class="chat-list">
