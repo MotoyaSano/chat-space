@@ -12,24 +12,8 @@
     .info-rightbox
       = link_to "Edit", "edit"
   %ul.main-chat__message-list
-    %li.chat-lists
-      .messages
-        = render partial: 'message', collection: @messages
-      .chat-list
-        %p.chat-name
-          masa
-        %p.chat-time
-          2019/11/20(Wed) 17:43:01
-      %p.chat__message
-        おはよう
-    %li.chat-lists
-      .chat-list
-        %p.chat-name
-          sota
-        %p.chat-time
-          2019/11/20(Wed) 17:43:10
-      %p.chat__message
-        おはよ!
+    = render @messages
+
   .main-chat__message-form
     = form_for [@group, @message] do |f|
       .input-box
@@ -38,15 +22,5 @@
           = f.label :image, class: 'image' do
             = icon('fas', 'image', class: 'icon')
             = f.file_field :image, class: 'hidden'
-        = f.submit 'Send', class: 'submit-btn'
-      
-
-    -# %form.input-box
-    -#   .text
-    -#     %input.text-message{placeholder: "type a message", type: "text"}
-        
-    -#     %label.image
-    -#       %i.fa.fa-image
-    -#       %input{type: "file"}
-          
-    -#   %input.submit-btn{type: "submit", value: "Send"}
+        = f.submit 'Send',class: 'submit-btn'
+       
