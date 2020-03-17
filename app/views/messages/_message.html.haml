@@ -1,3 +1,4 @@
+.message{data: {message: {id: message.id}}}
 %li.chat-lists
   .chat-list
     %p.chat-name
@@ -8,3 +9,4 @@
     %p.chat-message
       = message.content
     = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+  
