@@ -18,7 +18,7 @@ $(function(){
           <img class="lower-message__image" src="${message.image}" alt="Test image">
         </li>
        </div>`
-        return html;
+      return html;
     } else {
       var html =
        `<div class="message" data-message-id=${message.id}>
@@ -30,7 +30,7 @@ $(function(){
             <p class="chat-time">
               ${message.created_at}
             </p>
-          </div>
+            </div>
             <p class="chat-message">
               ${message.content}
             </p>
