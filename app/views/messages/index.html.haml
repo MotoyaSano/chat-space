@@ -1,3 +1,12 @@
-.wrapper
-  = render "side_bar"
-  = render "main_chat"
+-# 
+= render
+  - breadcrumb :loguot
+  = render
+    .mypage-contents
+      .logout
+        .logout__form
+          = link_to "destroy_user_session_path", {method: :delete, class: "logout__form--button"}
+            ログアウト
+    = render 'layouts/side'
+    = render 'footer'
+    = render 'sale-btn'
